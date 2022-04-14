@@ -16,11 +16,14 @@ app.get("/", (req, res) => {
   res.send("Hello to blog-mern-dark-d3-charts API");
 });
 
-mongoose.connect(uri, {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useUnifiedTopology: true,
-});
+mongoose
+  .connect(uri, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("Connected to MongoDB successfully"))
+  .catch((err) => console.log(err));
 
 const server = require("http").createServer(app);
 const { Server } = require("socket.io");
