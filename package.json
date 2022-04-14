@@ -1,7 +1,8 @@
 {
-  "name": "hill-shart-server",
+  "name": "blog-mern-dark-d3-charts",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://blog-mern-dark-d3-charts.herokuapp.com",
   "main": "server.js",
   "dependencies": {
     "cors": "^2.8.5",
@@ -15,9 +16,14 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server",
+    "deploy": "git add . && git commit -m Heroku && git push && git push heroku && heroku logs --tail --remote heroku"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "cacheDirectories": [
+    "node_modules",
+    "/client/node_modules"
+  ]
 }
