@@ -40,15 +40,16 @@ mongoose
     useCreateIndex: true,
     useUnifiedTopology: true,
   })
-  .then(() => 
-      // console.log(
+  .then(() =>
+    // console.log(
     //   `Connected to Mongo! Database name: "${x.connections[0].name}"`
     // );
 
     console.log(
-        `MongoDB connected: ${mongoose.connection.host}`.green.underline.bold
-      )  
-//   console.log("Connected to MongoDB successfully"))
+      `MongoDB connected: ${mongoose.connection.host}`.green.underline.bold
+    )
+  )
+  //   console.log("Connected to MongoDB successfully"))
   .catch((err) => console.log(err));
 
 const server = require("http").createServer(app);
