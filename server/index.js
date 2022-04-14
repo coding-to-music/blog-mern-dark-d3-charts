@@ -13,10 +13,6 @@ app.use("/uploads", express.static("uploads"));
 app.use("/hills", require("./routes/hills"));
 app.use("/markers", require("./routes/markers"));
 
-app.get("/", (req, res) => {
-  res.send("Hello to blog-mern-dark-d3-charts API");
-});
-
 // const __dirname = path.resolve();
 // app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
@@ -30,6 +26,10 @@ if (process.env.NODE_ENV === "production") {
     res.send("API IS RUNNING......");
   });
 }
+
+app.get("/", (req, res) => {
+  res.send("Hello to blog-mern-dark-d3-charts API");
+});
 
 mongoose
   .connect(uri, {
