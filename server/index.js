@@ -16,8 +16,11 @@ app.use("/markers", require("./routes/markers"));
 // const __dirname = path.resolve();
 // app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-const root = path.join(__dirname, "client", "build");
-//added /taylor-ecommerce/ because of the < bug
+const __parent = path.resolve(__dirname, "..");
+console.log(__parent);
+
+const root = path.join(__parent, "client", "build");
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(root));
   app.get("*", (req, res) => res.sendFile("index.html", { root }));
