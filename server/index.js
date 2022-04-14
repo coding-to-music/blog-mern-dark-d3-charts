@@ -1,3 +1,4 @@
+import path from "path";
 const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
