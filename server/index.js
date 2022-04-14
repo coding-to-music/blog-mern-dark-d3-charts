@@ -47,7 +47,7 @@ mongoose
 
     console.log(
       //   `MongoDB connected: ${mongoose.connection.host}`.green.underline.bold
-      `MongoDB connected: ${mongoose.connection.host}`.green.bold
+      `MongoDB connected: ${mongoose.connection.host}`.green
     )
   )
   //   console.log("Connected to MongoDB successfully"))
