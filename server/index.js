@@ -13,11 +13,11 @@ app.use("/uploads", express.static("uploads"));
 app.use("/hills", require("./routes/hills"));
 app.use("/markers", require("./routes/markers"));
 
-// const __dirname = path.resolve();
-// app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+const __dirname = path.resolve();
+console.log("__dirname", __dirname);
 
 const __parent = path.resolve(__dirname, "..");
-console.log(__parent);
+console.log("__parent", __parent);
 
 const root = path.join(__parent, "client", "build");
 
@@ -40,7 +40,15 @@ mongoose
     useCreateIndex: true,
     useUnifiedTopology: true,
   })
-  .then(() => console.log("Connected to MongoDB successfully"))
+  .then(() => 
+      // console.log(
+    //   `Connected to Mongo! Database name: "${x.connections[0].name}"`
+    // );
+
+    console.log(
+        `MongoDB connected: ${conn.connection.host}`.green.underline.bold
+      );  
+  console.log("Connected to MongoDB successfully"))
   .catch((err) => console.log(err));
 
 const server = require("http").createServer(app);
