@@ -14,10 +14,10 @@ app.use("/hills", require("./routes/hills"));
 app.use("/markers", require("./routes/markers"));
 
 // const __dirname = path.resolve();
-console.log("__dirname", __dirname);
+// console.log("__dirname", __dirname);
 
 const __parent = path.resolve(__dirname, "..");
-console.log("__parent", __parent);
+// console.log("__parent", __parent);
 
 const root = path.join(__parent, "client", "build");
 
@@ -46,7 +46,8 @@ mongoose
     // );
 
     console.log(
-      `MongoDB connected: ${mongoose.connection.host}`.green.underline.bold
+      //   `MongoDB connected: ${mongoose.connection.host}`.green.underline.bold
+      `MongoDB connected: ${mongoose.connection.host}`.green.bold
     )
   )
   //   console.log("Connected to MongoDB successfully"))
