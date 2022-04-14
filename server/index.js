@@ -13,7 +13,7 @@ app.use("/uploads", express.static("uploads"));
 app.use("/hills", require("./routes/hills"));
 app.use("/markers", require("./routes/markers"));
 
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 console.log("__dirname", __dirname);
 
 const __parent = path.resolve(__dirname, "..");
