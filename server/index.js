@@ -13,7 +13,7 @@ app.use("/hills", require("./routes/hills"));
 app.use("/markers", require("./routes/markers"));
 
 app.get("/", (req, res) => {
-  res.send("Hello to hillchart API");
+  res.send("Hello to blog-mern-dark-d3-charts API");
 });
 
 mongoose.connect(uri, {
