@@ -46,9 +46,9 @@ mongoose
     // );
 
     console.log(
-        `MongoDB connected: ${conn.connection.host}`.green.underline.bold
-      );  
-  console.log("Connected to MongoDB successfully"))
+        `MongoDB connected: ${mongoose.connection.host}`.green.underline.bold
+      )  
+//   console.log("Connected to MongoDB successfully"))
   .catch((err) => console.log(err));
 
 const server = require("http").createServer(app);
