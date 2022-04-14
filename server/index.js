@@ -16,6 +16,20 @@ app.get("/", (req, res) => {
   res.send("Hello to blog-mern-dark-d3-charts API");
 });
 
+const __dirname = path.resolve();
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+const root = path.join(__dirname, "frontend", "build");
+//added /taylor-ecommerce/ because of the < bug
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(root));
+  app.get("*", (req, res) => res.sendFile("index.html", { root }));
+} else {
+  app.get("/", (req, res) => {
+    res.send("API IS RUNNING......");
+  });
+}
+
 mongoose
   .connect(uri, {
     useNewUrlParser: true,
